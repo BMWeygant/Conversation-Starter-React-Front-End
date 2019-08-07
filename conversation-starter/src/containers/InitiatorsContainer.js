@@ -23,6 +23,7 @@ export default class InitiatorsContainer extends Component {
                             <p>Gender: {initiator.gender}</p>
                             <p>Swag: {initiator.swag}</p>
                             <p>Conscience: {initiator.conscience}</p>
+                            <p>Romantic Interest: {initiator.romantic_interest}</p>
                         </div>
                     ))}
                 </ul>

@@ -12,6 +12,8 @@ function App() {
     <div className="App">
       <Route exact path="/" component={Home} />
       <Route path="/initiators" component={InitiatorsContainer} />
+      <Route path="/targets" component={TargetsContainer} />
+      <Route path="/convos" component={ConvosContainer} />
     </div>
     </Router>
   );

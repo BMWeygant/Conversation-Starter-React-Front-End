@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class InitiatorsContainer extends Component {
     state = {
-        targetss: []
+        targets: []
     }
 
     componentDidMount() {
