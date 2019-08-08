@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-export default class InitiatorsContainer extends Component {
+ class InitiatorsContainer extends Component {
     state = {
         initiators: []
     }
@@ -11,13 +12,13 @@ export default class InitiatorsContainer extends Component {
         .then(initiators => this.setState( { initiators }))
     }
     render(){
-        if(this.state.initiators.length === 0){
+        if(this.props.initiators.length === 0){
         return <h1>Just going through motions</h1>
         }
          return (
             <div>
                 <ul>
-                    {this.state.initiators.map(initiator => (
+                    {this.props.initiators.map(initiator => (
                         <div>
                             <p>ID: {initiator.id}</p>
                             <p>Gender: {initiator.gender}</p>
@@ -32,3 +33,10 @@ export default class InitiatorsContainer extends Component {
     }
 
 }
+
+const mapStateToProps = state => {
+    return {
+        initiators: state.initiators
+    }
+}
+export default connect(mapStateToProps)(InitiatorsContainer)
