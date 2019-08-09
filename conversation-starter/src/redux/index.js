@@ -11,4 +11,4 @@ const rootReducer = combineReducers({
 
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)
     )
-  )
+ )

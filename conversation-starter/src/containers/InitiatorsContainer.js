@@ -36,4 +36,6 @@ const mapStateToProps = state => {
         initiators: state.initiators
     }
 }
-export default connect(mapStateToProps, { fetchInitiators })(InitiatorsContainer)
+export default connect(mapStateToProps, 
+    { fetchInitiators }
+    )(InitiatorsContainer)
