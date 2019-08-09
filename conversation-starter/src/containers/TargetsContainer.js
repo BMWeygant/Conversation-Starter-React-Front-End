@@ -18,7 +18,7 @@ export default class InitiatorsContainer extends Component {
             <div>
                 <ul>
                     {this.state.targets.map(target => (
-                        <div>
+                        <div key={target.id}>
                             <p>ID: {target.id}</p>
                             <p>Gender: {target.gender}</p>
                             <p>Swag: {target.swag}</p>

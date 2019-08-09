@@ -17,8 +17,7 @@ import { fetchInitiators } from '../redux/actions/initiatorsActions'
             <div >
                 <ul>
                     {this.props.initiators.map(initiator => (
-                        <div key={initiator.id}>
-                            
+                        <div key={initiator.id}>                            
                             <p>Gender: {initiator.gender}</p>
                             <p>Swag: {initiator.swag}</p>
                             <p>Conscience: {initiator.conscience}</p>
