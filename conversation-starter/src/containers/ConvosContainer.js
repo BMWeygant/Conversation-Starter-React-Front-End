@@ -18,7 +18,13 @@ export default class ConvosContainer extends Component {
         }
         return(
             <div>
-                
+               <ul>
+                   {this.state.convos.map(convo => (
+                       <div>
+                           <p>Topic: {convo.topic}</p>
+                       </div>
+                   ))}
+               </ul> 
             </div>
         )
     }
