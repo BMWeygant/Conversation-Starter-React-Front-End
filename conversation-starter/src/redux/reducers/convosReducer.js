@@ -1,4 +1,4 @@
-const initialState = {
+const initialState = [{
         initiator_gender: '',
         initiator_swag: '',
         target_gender: '',
@@ -9,7 +9,7 @@ const initialState = {
         conscience: '',
         ice_breaker: '',
         convos: []
-    }
+    }]
     
     export default (state = initialState, action) => {
        switch(action.type){

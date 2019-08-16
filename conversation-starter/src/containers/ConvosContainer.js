@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 
-export default class ConvosContainer extends Component {
-    state = {
-        convos: []
-    }
+class ConvosContainer extends Component {
+    // state = {
+    //     convos: []
+    // }
 
     componentDidMount() {
         fetch("http://localhost:3001/convos")
@@ -13,13 +14,13 @@ export default class ConvosContainer extends Component {
     }
 
     render(){
-        if(this.state.convos.length === 0) {
+        if(this.props.convos.length === 0) {
             return <h1>Loading</h1>
         }
         return(
             <div>
                <ul>
-                   {this.state.convos.map(convo => (
+                   {this.props.convos.map(convo => (
                        <div>
                            <p>Topic: {convo.topic}</p>
                        </div>
@@ -29,3 +30,11 @@ export default class ConvosContainer extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return{
+        convos: state.convos
+    }
+}
+
+export default connect (mapStateToProps)(ConvosContainer)
