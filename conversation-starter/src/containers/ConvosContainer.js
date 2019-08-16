@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { fetchConvos } from '../redux/actions/convosActions'
 
 class ConvosContainer extends Component {
     // state = {
@@ -8,9 +8,7 @@ class ConvosContainer extends Component {
     // }
 
     componentDidMount() {
-        fetch("http://localhost:3001/convos")
-        .then(res => res.json())
-        .then(convos => this.setState( { convos }))
+        {this.props.fetchConvos()}
     }
 
     render(){
@@ -21,7 +19,7 @@ class ConvosContainer extends Component {
             <div>
                <ul>
                    {this.props.convos.map(convo => (
-                       <div>
+                       <div key={convo.id}>
                            <p>Topic: {convo.topic}</p>
                        </div>
                    ))}
@@ -37,4 +35,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect (mapStateToProps)(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos })(ConvosContainer)
