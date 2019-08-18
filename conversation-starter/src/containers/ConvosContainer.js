@@ -18,8 +18,6 @@ class ConvosContainer extends Component {
         return(
             <div className = 'convo-container'>               
                <div classname = 'convo-header'>
-               {/* <img src="https://previews.123rf.com/images/tawng/tawng1104/tawng110400004/9235025-editable-silhouettes-of-people-socializing-at-a-party.jpg?" alt="background"></img> */}
-
                <h1>Let's do some shit!</h1>
                </div>
                <form onSubmit={this.handleSubmit}>
@@ -90,7 +88,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="very"
-                        //checked={() => this.props.targetApproachability === "high"}
+                        //checked={() => this.props.approachability === "high"}
                         onChange={() => this.handleChange}
                     /> Very
                 </label>
@@ -99,7 +97,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="average"
-                        //checked={() => this.props.targetApproachability === "average"}
+                        //checked={() => this.props.approachability === "average"}
                         onChange={() => this.handleChange}
                     /> Average
                 </label>
@@ -108,7 +106,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="not at all"
-                        //checked={() => this.props.targetApproachability === "low"}
+                        //checked={() => this.props.approachability === "low"}
                         onChange={() => this.handleChange}
                     /> Not at all
                 </label>
@@ -116,6 +114,10 @@ class ConvosContainer extends Component {
                 <br></br>
                 <button>Submit</button>
                </form>
+               <h4>{this.props.approachability}</h4>
+               <h4>{this.props.relationship}</h4>
+               <h4>{this.props.location}</h4>
+               <h4>{this.props.quote}</h4>
             </div>
         )
     }

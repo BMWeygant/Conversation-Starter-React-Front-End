@@ -15,7 +15,7 @@ export const createConvo = (convo) => {
         headers: {
           'Content-type': 'application/json'
         },
-        body: JSON.stringify({relationship: convo.relationship, targetApproachability: convo.target_approachability, location: convo.location, iceBreaker: convo.ice_breaker}),
+        body: JSON.stringify({relationship: convo.relationship, approachability: convo.approachability, location: convo.location, quote: convo.quote}),
         //Ask Corinna about camel case vs rails _ syntax when posting to db
       })
         .then((response) => {return response.json()})

@@ -1,8 +1,8 @@
 const initialState = [{
-   targetApproachability: '',
+   approachability: '',
    relationship: '',
    location: '',
-   iceBreaker: ''
+   quote: ''
 }]
     
     export default (state = initialState, action) => {
