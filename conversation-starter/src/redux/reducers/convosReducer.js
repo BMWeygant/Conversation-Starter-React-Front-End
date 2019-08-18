@@ -2,7 +2,7 @@ const initialState = []
     
     export default (state = initialState, action) => {
        switch(action.type){
-          case "FETCH_CONVOS_SUCCESS":
+          case "FETCH_RELATIONSHIP_SUCCESS":
              return action.payload
           case "FETCH_LOCATION_SUCCESS":
                return action.payload

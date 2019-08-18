@@ -28,7 +28,7 @@ class ConvosContainer extends Component {
                         name="relationship"
                         value="professional"
                         // checked={() => this.props.relationship === "professional"}
-                         onClick={() => this.handleChange}
+                         onChange={() => this.handleChange}
                     /> Professional
                 </label>
                 <label>
@@ -37,7 +37,7 @@ class ConvosContainer extends Component {
                         name="relationship"
                         value="family"
                         //checked={() => this.props.relationship === "family"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Family
                 </label>
                 <label>
@@ -46,7 +46,7 @@ class ConvosContainer extends Component {
                         name="relationship"
                         value="none"
                         //checked={() => this.props.relationship === "none"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> None
                 </label>
                 <br />
@@ -59,7 +59,7 @@ class ConvosContainer extends Component {
                         name="location"
                         value="work"
                         //checked={() => this.props.location === "work"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Work
                 </label>
                 <label>
@@ -68,7 +68,7 @@ class ConvosContainer extends Component {
                         name="location"
                         value="home"
                         //checked={() => this.props.location === "home"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Home
                 </label>
                 <label>
@@ -77,7 +77,7 @@ class ConvosContainer extends Component {
                         name="location"
                         value="store"
                         //checked={() => this.props.location === "store"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Store
                 </label>
                 <br />
@@ -89,7 +89,7 @@ class ConvosContainer extends Component {
                         name="approachability"
                         value="very"
                         //checked={() => this.props.approachability === "high"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Very
                 </label>
                 <label>
@@ -98,7 +98,7 @@ class ConvosContainer extends Component {
                         name="approachability"
                         value="average"
                         //checked={() => this.props.approachability === "average"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Average
                 </label>
                 <label>
@@ -107,7 +107,7 @@ class ConvosContainer extends Component {
                         name="approachability"
                         value="not at all"
                         //checked={() => this.props.approachability === "low"}
-                        onClick={() => this.handleChange}
+                        onChange={() => this.handleChange}
                     /> Not at all
                 </label>
                 <br></br>
