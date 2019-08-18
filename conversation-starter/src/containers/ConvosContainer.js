@@ -3,12 +3,15 @@ import { connect } from 'react-redux'
 import { fetchConvos } from '../redux/actions/convosActions'
 
 class ConvosContainer extends Component {
-    // state = {
-    //     convos: []
-    // }
+           // this.handleChange = this.handleChange.bind(this)
 
     componentDidMount() {
         this.props.fetchConvos()
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target
+         this.setState({ [name]: value })
     }
 
     render(){
@@ -19,14 +22,13 @@ class ConvosContainer extends Component {
 
                <h1>Let's do some shit!</h1>
                </div>
-
                <form onSubmit={this.handleSubmit}>
                <label>
                     <input 
                         type="radio" 
                         name="relationship"
                         value="professional"
-                        checked={this.props.relationship === "professional"}
+                        checked={this.props.convos.relationship === "professional"}
                         onChange={this.handleChange}
                     /> Professional
                 </label>
@@ -35,7 +37,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="family"
-                        checked={this.props.relationship === "family"}
+                        checked={this.props.convos.relationship === "family"}
                         onChange={this.handleChange}
                     /> Family
                 </label>
@@ -43,15 +45,12 @@ class ConvosContainer extends Component {
                     <input 
                         type="radio" 
                         name="relationship"
-                        value="male"
-                        checked={this.props.relationship === "male"}
+                        value="none"
+                        checked={this.props.convos.relationship === "none"}
                         onChange={this.handleChange}
-                    /> Male
+                    /> None
                 </label>
-
-
-
-
+                <button>Submit</button>
                </form>
             </div>
         )
