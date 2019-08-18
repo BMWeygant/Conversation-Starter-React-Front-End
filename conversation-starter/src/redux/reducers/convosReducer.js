@@ -1,9 +1,4 @@
-const initialState = [{
-   approachability: '',
-   relationship: '',
-   location: '',
-   quote: ''
-}]
+const initialState = []
     
     export default (state = initialState, action) => {
        switch(action.type){
