@@ -8,22 +8,51 @@ class ConvosContainer extends Component {
     // }
 
     componentDidMount() {
-        {this.props.fetchConvos()}
+        this.props.fetchConvos()
     }
 
     render(){
-        if(this.props.convos.length === 0) {
-            return <h1>Loading</h1>
-        }
         return(
-            <div>
-               <ul>
-                   {this.props.convos.map(convo => (
-                       <div key={convo.id}>
-                           <p>Topic: {convo.topic}</p>
-                       </div>
-                   ))}
-               </ul> 
+            <div className = 'convo-container'>               
+               <div classname = 'convo-header'>
+               {/* <img src="https://previews.123rf.com/images/tawng/tawng1104/tawng110400004/9235025-editable-silhouettes-of-people-socializing-at-a-party.jpg?" alt="background"></img> */}
+
+               <h1>Let's do some shit!</h1>
+               </div>
+
+               <form onSubmit={this.handleSubmit}>
+               <label>
+                    <input 
+                        type="radio" 
+                        name="relationship"
+                        value="professional"
+                        checked={this.props.relationship === "professional"}
+                        onChange={this.handleChange}
+                    /> Professional
+                </label>
+                <label>
+                    <input 
+                        type="radio" 
+                        name="relationship"
+                        value="family"
+                        checked={this.props.relationship === "family"}
+                        onChange={this.handleChange}
+                    /> Family
+                </label>
+                <label>
+                    <input 
+                        type="radio" 
+                        name="relationship"
+                        value="male"
+                        checked={this.props.relationship === "male"}
+                        onChange={this.handleChange}
+                    /> Male
+                </label>
+
+
+
+
+               </form>
             </div>
         )
     }
