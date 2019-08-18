@@ -25,7 +25,6 @@ export const createConvo = (convo) => {
           'Content-type': 'application/json'
         },
         body: JSON.stringify({relationship: convo.relationship, approachability: convo.approachability, location: convo.location, quote: convo.quote}),
-        //Ask Corinna about camel case vs rails _ syntax when posting to db
       })
         .then((response) => {return response.json()})
         .catch(error => console.log(error))
