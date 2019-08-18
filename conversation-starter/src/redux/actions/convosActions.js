@@ -6,9 +6,9 @@ export const fetchConvos = () => dispatch => {
     )
 }
 
-export const createConvo = convo => {
+export const createConvo = (convo) => {
 
-    return dispatch => {
+    return (dispatch) => {
   
       return fetch("http://localhost:3001/convos", {
         method: "POST",
@@ -17,13 +17,7 @@ export const createConvo = convo => {
         },
         body: JSON.stringify({relationship: convo.relationship, targetApproachability: convo.target_approachability, location: convo.location, iceBreaker: convo.ice_breaker}),
       })
-        .then(response => response.json())
-  
-        .then(convo => {
-  
-        //   dispatch(addConvo(convo))
-        //   dispatch(resetConvoForm())
-        })
+        .then((response) => {return response.json()})
         .catch(error => console.log(error))
     }
   }

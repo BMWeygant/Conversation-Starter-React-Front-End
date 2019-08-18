@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo } from '../redux/actions/convosActions'
+
 
 class ConvosContainer extends Component {
            // this.handleChange = this.handleChange.bind(this)
@@ -9,7 +10,7 @@ class ConvosContainer extends Component {
         this.props.fetchConvos()
     }
 
-    handleChange(event) {
+    handleChange = event => {
         const {name, value} = event.target
          this.setState({ [name]: value })
     }
@@ -28,8 +29,8 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="professional"
-                        checked={this.props.convos.relationship === "professional"}
-                        onChange={this.handleChange}
+                        checked={() => this.props.convos.relationship === "professional"}
+                        onChange={() => this.handleChange}
                     /> Professional
                 </label>
                 <label>
@@ -37,8 +38,8 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="family"
-                        checked={this.props.convos.relationship === "family"}
-                        onChange={this.handleChange}
+                        checked={() => this.props.convos.relationship === "family"}
+                        onChange={() => this.handleChange}
                     /> Family
                 </label>
                 <label>
@@ -46,8 +47,8 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="none"
-                        checked={this.props.convos.relationship === "none"}
-                        onChange={this.handleChange}
+                        checked={() => this.props.convos.relationship === "none"}
+                        onChange={() => this.handleChange}
                     /> None
                 </label>
                 <button>Submit</button>
@@ -57,10 +58,10 @@ class ConvosContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
     return{
-        convos: state.convos
+        createConvo: (convo) => dispatch(createConvo(convo))
     }
 }
 
-export default connect (mapStateToProps, { fetchConvos })(ConvosContainer)
+export default connect (mapDispatchToProps, { fetchConvos })(ConvosContainer)
