@@ -1,8 +1,17 @@
 export const fetchConvos = () => dispatch => {
     return fetch("http://localhost:3001/convos")
     .then(res => res.json())
-    .then(convos =>
-        dispatch({type: "FETCH_CONVOS_SUCCESS", payload: convos})
+    .then(relationship =>
+        dispatch({type: "FETCH_RELATIONSHIP_SUCCESS", payload: relationship})
+    )
+    .then(location =>
+        dispatch({type: "FETCH_LOCATION_SUCCESS", payload: location})
+    )
+    .then(approachability =>
+        dispatch({type: "FETCH_APPROACHABILITY_SUCCESS", payload: approachability})
+    )
+    .then(quote =>
+        dispatch({type: "FETCH_QUOTE_SUCCESS", payload: quote})
     )
 }
 

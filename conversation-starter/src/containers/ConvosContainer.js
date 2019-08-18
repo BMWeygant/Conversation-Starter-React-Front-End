@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos, createConvo } from '../redux/actions/convosActions'
+import { fetchConvos } from '../redux/actions/convosActions'
 
 
 class ConvosContainer extends Component {
@@ -17,7 +17,7 @@ class ConvosContainer extends Component {
     render(){
         return(
             <div className = 'convo-container'>               
-               <div classname = 'convo-header'>
+               <div className = 'convo-header'>
                <h1>Let's do some shit!</h1>
                </div>
                <form onSubmit={this.handleSubmit}>
@@ -114,10 +114,10 @@ class ConvosContainer extends Component {
                 <br></br>
                 <button>Submit</button>
                </form>
-               <h4>{this.props.approachability}</h4>
-               <h4>{this.props.relationship}</h4>
-               <h4>{this.props.location}</h4>
-               <h4>{this.props.quote}</h4>
+               {/* <h4>{() => this.props.convos.approachability}</h4> */}
+               {/* <h4>{this.props.relationship}</h4>
+               <h4>{this.props.location}</h4> */}
+               {/* <h4>{this.props.quote}</h4> */}
             </div>
         )
     }
