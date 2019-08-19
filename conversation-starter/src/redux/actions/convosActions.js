@@ -15,6 +15,13 @@ export const fetchConvos = () => {
     )}
 }
 
+export const updateRelationship = convo => {
+    return {
+      type: 'UPDATE_RELATIONSHIP',
+      payload: convo
+    }
+  }
+
 export const createConvo = (convo) => {
 
     return (dispatch) => {
