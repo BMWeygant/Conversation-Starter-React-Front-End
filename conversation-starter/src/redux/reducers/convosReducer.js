@@ -26,7 +26,12 @@ const initialState = {
                return {
                ...state, 
                quote: action.payload,
-            }           
+            }   
+            case "UPDATE_RELATIONSHIP":
+               return {
+                  ...state,
+                  relationship: action.payload,
+               }        
             case "START_NEW_CONVO":
               return {
                  initialState
