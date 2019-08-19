@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos, createConvo } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo, updateRelationship } from '../redux/actions/convosActions'
 
 
 class ConvosContainer extends Component {
@@ -9,17 +9,33 @@ class ConvosContainer extends Component {
         this.props.fetchConvos()
     }
 
-    handleChange = event => {
-        const {name, value} = event.target;
-        this.setState({ [name]: value })
-    }
+    handleRelationship = (event, status) => {
+        this.props.updateRelationship(
+          status
+        );
+      }
+
+      handleLocation = (event, status) => {
+        this.props.updateLocation(
+          status
+        );
+      }
+
+      handleApproachability = (event, status) => {
+        this.props.updateApproachability(
+          status
+        );
+      }
+
+      handleQuote = (event, status) => {
+        this.props.updateQuote(
+          status
+        );
+      }
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.createConvo(this.state)
-        this.setState({
-          relationship: ''
-        })
+        this.props.createConvo(this.props.convo)
       }
 
     render(){
@@ -28,15 +44,14 @@ class ConvosContainer extends Component {
                <div className = 'convo-header'>
                <h1>Let's do some shit!</h1>
                </div>
-               <form onSubmit={this.handleSubmit}>
+               <form onSubmit={(e) => this.handleSubmit(e)}>
                <label>
                    What's your relationship with this person?<br></br>
                     <input
                         type="radio" 
                         name="relationship"
                         value="professional"
-                         //checked={() => this.props.relationship === "professional"}
-                         onChange={() => this.handleChange}
+                         onChange={(e) => this.handleRelationship(e, "professional")}
                     /> Professional
                 </label>
                 <label>
@@ -44,8 +59,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="family"
-                        //checked={() => this.props.relationship === "family"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleRelationship(e, "family")}
                     /> Family
                 </label>
                 <label>
@@ -53,11 +67,10 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="none"
-                        //checked={() => this.props.relationship === "none"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleRelationship(e, "none")}
                     /> None
                 </label>
-                {/* <br />
+                <br />
                 <br />
                 <br /> 
                 <label>
@@ -66,8 +79,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="location"
                         value="work"
-                        //checked={() => this.props.location === "work"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleLocation(e, "work")}
                     /> Work
                 </label>
                 <label>
@@ -75,18 +87,16 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="location"
                         value="home"
-                        //checked={() => this.props.location === "home"}
-                        onChange={() => this.handleChange}
+                       onChange={(e) => this.handleLocation(e, "home")}
                     /> Home
                 </label>
                 <label>
                     <input 
                         type="radio" 
                         name="location"
-                        value="store"
-                        //checked={() => this.props.location === "store"}
-                        onChange={() => this.handleChange}
-                    /> Store
+                        value="school"
+                        onChange={(e) => this.handleLocation(e, "school")}
+                    /> School
                 </label>
                 <br />
                 <br></br>
@@ -96,8 +106,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="very"
-                        //checked={() => this.props.approachability === "high"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleApproachability(e, "very")}
                     /> Very
                 </label>
                 <label>
@@ -105,8 +114,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="average"
-                        //checked={() => this.props.approachability === "average"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleApproachability(e, "average")}
                     /> Average
                 </label>
                 <label>
@@ -114,8 +122,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="approachability"
                         value="not at all"
-                        //checked={() => this.props.approachability === "low"}
-                        onChange={() => this.handleChange}
+                        onChange={(e) => this.handleApproachability(e, "not at all")}
                     /> Not at all
                 </label> */}
                 <br></br>
@@ -126,10 +133,6 @@ class ConvosContainer extends Component {
                <h4>{() => this.props.location}</h4>
                <h4>{() => this.props.quote}</h4> */}
                </form>
-               {/* <h4>{() => this.props.approachability}</h4>
-               <h4>{() => this.props.relationship}</h4>
-               <h4>{() => this.props.location}</h4>
-               <h4>{() => this.props.quote}</h4> */}
             </div>
         )
     }
@@ -137,8 +140,8 @@ class ConvosContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-      convo: state.createConvo
+      convo: state.convos
     }
   }
 
-export default connect (mapStateToProps, { fetchConvos, createConvo })(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship })(ConvosContainer)
