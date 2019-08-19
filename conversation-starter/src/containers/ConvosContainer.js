@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo } from '../redux/actions/convosActions'
 
 
 class ConvosContainer extends Component {
@@ -9,10 +9,18 @@ class ConvosContainer extends Component {
         this.props.fetchConvos()
     }
 
-    handleChange(event) {
-        const {name, value} = event.target
+    handleChange = event => {
+        const {name, value} = event.target;
         this.setState({ [name]: value })
     }
+
+    handleSubmit = event => {
+        event.preventDefault()
+        this.props.createConvo(this.state)
+        this.setState({
+          relationship: ''
+        })
+      }
 
     render(){
         return(
@@ -27,7 +35,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="professional"
-                        // checked={() => this.props.relationship === "professional"}
+                         //checked={() => this.props.relationship === "professional"}
                          onChange={() => this.handleChange}
                     /> Professional
                 </label>
@@ -49,7 +57,7 @@ class ConvosContainer extends Component {
                         onChange={() => this.handleChange}
                     /> None
                 </label>
-                <br />
+                {/* <br />
                 <br />
                 <br /> 
                 <label>
@@ -109,7 +117,7 @@ class ConvosContainer extends Component {
                         //checked={() => this.props.approachability === "low"}
                         onChange={() => this.handleChange}
                     /> Not at all
-                </label>
+                </label> */}
                 <br></br>
                 <br></br>
                 <button>Submit</button>
@@ -133,4 +141,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, { fetchConvos })(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos, createConvo })(ConvosContainer)
