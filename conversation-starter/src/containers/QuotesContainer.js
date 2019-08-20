@@ -17,22 +17,43 @@ class QuotesContainer extends Component {
           status
         );
       }
+
+    displayQuote(){
+      let index = 0
+    
+    if(this.props.store.convos.relationship === "none"){
+      index = 1
+    }
+    else if(this.props.store.convos.relationship === "family" && this.props.store.convos.approachability === "not at all"){
+      index = 2
+    }
+    else if(this.props.store.convos.relationship === "professional" && this.props.store.convos.location === "school"){
+      index = 3
+    }
+      return(
+        <li>{this.props.store.quotes.quote[index].line}</li>
+      )
+    }
     
     render(){
-    
-      return (
-          <div>
-          <h1>This is a quote from the quote container</h1>
+      return(
+          <div className = 'quotes-container'>
+          <ul className = 'quotes-list'>
+            {this.displayQuote()}
+       </ul>
           </div>
       )
     }
+
 }
+
+
 
 
 
 const mapStateToProps = state => {
     return {
-      quote: state.quotes
+      store: state
     }
   }
 

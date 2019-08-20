@@ -1,5 +1,5 @@
 const initialState = {
-    quote: ''
+    quote: [""]
   }
 
 
