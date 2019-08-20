@@ -23,6 +23,40 @@
   color: #61dafb;
 }
 
+.nav-wrapper {
+  background: rgb(43, 109, 231);
+  text-align: center;
+  font-size: 27px;
+  text-shadow: 2px 2px black;
+	width: 100%;
+	min-height: 55px;
+	padding-left: 25px;
+	border-bottom: 1px solid rgba(15,15,15,0.5);
+	margin: auto;
+}
+
+.nav-links-wrapper {
+  margin: auto
+}
+
+.footer-wrapper{
+  background: orange
+}
+
+.convo-container{
+  background: rgb(83, 211, 111)
+}
+
+.quotes-container{
+  background: #c207c2;
+  font-weight: bold;
+}
+
+.convo-question{
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -36,11 +36,11 @@ class ConvosContainer extends Component {
         return(
             <div className = 'convo-container'>               
                <div className = 'convo-header'>
-               <h1>Let's do some shit!</h1>
+               <h1>Please Fill Out The Form</h1>
                </div>
                <form onSubmit={(e) => this.handleSubmit(e)}>
                <label>
-                   <h4>What's your relationship with this person?</h4>
+                   <h4 className = 'convo-question'>What's your relationship with this person?</h4>
                     <input
                         type="radio" 
                         name="relationship"
@@ -68,7 +68,7 @@ class ConvosContainer extends Component {
                 <br />
                 <br /> 
                 <label>
-                    <h4>Where is the conversation taking place?</h4>
+                    <h4 className = 'convo-question'>Where is the conversation taking place?</h4>
                     <input 
                         type="radio" 
                         name="location"
@@ -95,7 +95,7 @@ class ConvosContainer extends Component {
                 <br />
                 <br></br>
                 <label>
-                <h4>How approachable does the person feel to you?</h4>
+                <h4 className = 'convo-question'>How approachable does the person feel to you?</h4>
                     <input 
                         type="radio" 
                         name="approachability"
