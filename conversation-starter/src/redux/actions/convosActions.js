@@ -10,9 +10,7 @@ export const fetchConvos = () => {
     .then(approachability =>
         dispatch({type: "FETCH_APPROACHABILITY_SUCCESS", payload: approachability})
     )
-    .then(quote =>
-        dispatch({type: "FETCH_QUOTE_SUCCESS", payload: quote})
-    )}
+    }
 }
 
 export const updateRelationship = convo => {
@@ -36,12 +34,6 @@ export const updateLocation = convo => {
     }
   }
 
-  export const updateQuote = convo => {
-    return {
-      type: 'UPDATE_QUOTE',
-      payload: convo
-    }
-  }
 export const createConvo = (convo) => {
 
     return (dispatch) => {

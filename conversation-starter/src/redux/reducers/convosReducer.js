@@ -2,7 +2,6 @@ const initialState = {
   relationship: '',
   location: '',
   approachability: '',
-  quote: ''
 }
     
     export default (state = initialState, action) => {
@@ -21,12 +20,7 @@ const initialState = {
                return {
                ...state, 
                approachability: action.payload,
-            }         
-             case "FETCH_QUOTE_SUCCESS":
-               return {
-               ...state, 
-               quote: action.payload,
-            }   
+            }          
             case "UPDATE_RELATIONSHIP":
                return {
                   ...state,
@@ -41,11 +35,6 @@ const initialState = {
                return {
                   ...state,
                   approachability: action.payload,
-            }
-            case "UPDATE_QUOTE":
-               return {
-                  ...state,
-                  quote: action.payload,
             }
             case "START_NEW_CONVO":
               return {

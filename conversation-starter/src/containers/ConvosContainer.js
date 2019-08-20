@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, updateQuote } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability } from '../redux/actions/convosActions'
+import { updateQuote } from '../redux/actions/quotesActions'
 
 
 class ConvosContainer extends Component {
@@ -27,11 +28,11 @@ class ConvosContainer extends Component {
         );
       }
 
-      handleQuote = (event, status) => {
-        this.props.updateQuote(
-          status
-        );
-      }
+    //   handleQuote = (event, status) => {
+    //     this.props.updateQuote(
+    //       status
+    //     );
+    //   }
 
     handleSubmit = event => {
         event.preventDefault()
@@ -51,7 +52,7 @@ class ConvosContainer extends Component {
                         type="radio" 
                         name="relationship"
                         value="professional"
-                         onChange={(e) => this.handleRelationship(e, "professional")}
+                        onChange={(e) => this.handleRelationship(e, "professional")}
                     /> Professional
                 </label>
                 <label>
