@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos, createConvo, updateRelationship } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, updateQuote } from '../redux/actions/convosActions'
 
 
 class ConvosContainer extends Component {
@@ -124,14 +124,11 @@ class ConvosContainer extends Component {
                         value="not at all"
                         onChange={(e) => this.handleApproachability(e, "not at all")}
                     /> Not at all
-                </label> */}
+                </label>
                 <br></br>
                 <br></br>
                 <button>Submit</button>
-                 {/* <h4>{() => this.props.approachability}</h4>
-               <h4>{() => this.props.relationship}</h4>
-               <h4>{() => this.props.location}</h4>
-               <h4>{() => this.props.quote}</h4> */}
+               <h4>{() => this.props.quote}</h4>
                </form>
             </div>
         )
@@ -144,4 +141,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship })(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, updateQuote })(ConvosContainer)
