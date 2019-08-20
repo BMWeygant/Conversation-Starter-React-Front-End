@@ -22,6 +22,26 @@ export const updateRelationship = convo => {
     }
   }
 
+export const updateLocation = convo => {
+    return {
+      type: 'UPDATE_LOCATION',
+      payload: convo
+    }
+  }
+
+  export const updateApproachability = convo => {
+    return {
+      type: 'UPDATE_APPROACHABILITY',
+      payload: convo
+    }
+  }
+
+  export const updateQuote = convo => {
+    return {
+      type: 'UPDATE_QUOTE',
+      payload: convo
+    }
+  }
 export const createConvo = (convo) => {
 
     return (dispatch) => {
