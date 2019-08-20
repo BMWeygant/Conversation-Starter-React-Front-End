@@ -31,7 +31,22 @@ const initialState = {
                return {
                   ...state,
                   relationship: action.payload,
-               }        
+            }
+            case "UPDATE_LOCATION":
+               return {
+                  ...state,
+                  location: action.payload,
+            }
+            case "UPDATE_APPROACHABILITY":
+               return {
+                  ...state,
+                  approachability: action.payload,
+            }
+            case "UPDATE_QUOTE":
+               return {
+                  ...state,
+                  quote: action.payload,
+            }
             case "START_NEW_CONVO":
               return {
                  initialState
