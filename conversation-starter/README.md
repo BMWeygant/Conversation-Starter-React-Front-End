@@ -1,5 +1,58 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Conversation Starter
+
+ #About
+ Conversation Starter is a React Web App built off a backend Rails-API. It is made with the intention of helping you approach different people and how to start a conversation with them, whether you have an existing relationship or not.
+ 
+ 
+ Rails-API can be found here: https://github.com/BMWeygant/Conversation-Starter-API.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

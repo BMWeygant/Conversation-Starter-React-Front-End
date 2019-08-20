@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability } from '../redux/actions/convosActions'
-import { updateQuote } from '../redux/actions/quotesActions'
-
+import  QuotesContainer  from '../containers/QuotesContainer'
 
 class ConvosContainer extends Component {
 
@@ -28,12 +27,6 @@ class ConvosContainer extends Component {
         );
       }
 
-    //   handleQuote = (event, status) => {
-    //     this.props.updateQuote(
-    //       status
-    //     );
-    //   }
-
     handleSubmit = event => {
         event.preventDefault()
         this.props.createConvo(this.props.convo)
@@ -47,7 +40,7 @@ class ConvosContainer extends Component {
                </div>
                <form onSubmit={(e) => this.handleSubmit(e)}>
                <label>
-                   What's your relationship with this person?<br></br>
+                   <h4>What's your relationship with this person?</h4>
                     <input
                         type="radio" 
                         name="relationship"
@@ -75,7 +68,7 @@ class ConvosContainer extends Component {
                 <br />
                 <br /> 
                 <label>
-                    Where is the conversation taking place? <br></br>
+                    <h4>Where is the conversation taking place?</h4>
                     <input 
                         type="radio" 
                         name="location"
@@ -102,7 +95,7 @@ class ConvosContainer extends Component {
                 <br />
                 <br></br>
                 <label>
-                    How approachable does the person feel to you?<br></br>
+                <h4>How approachable does the person feel to you?</h4>
                     <input 
                         type="radio" 
                         name="approachability"
@@ -129,7 +122,7 @@ class ConvosContainer extends Component {
                 <br></br>
                 <br></br>
                 <button>Submit</button>
-               <h4>{() => this.props.quote}</h4>
+                <QuotesContainer />
                </form>
             </div>
         )
@@ -142,4 +135,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, updateQuote })(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, QuotesContainer })(ConvosContainer)
