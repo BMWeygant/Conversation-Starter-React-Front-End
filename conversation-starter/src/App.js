@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
 import ConvosContainer from './containers/ConvosContainer'
+import QuotesContainer from './containers/QuotesContainer'
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <NavBar />
       <Route exact path="/" component={Home} />
       <Route path="/convos" component={ConvosContainer} />
+      <Route path="/quotes" component={QuotesContainer} />
     </div>
     </Router>
   );
