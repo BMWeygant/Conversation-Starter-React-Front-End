@@ -9,6 +9,7 @@ class ConvosContainer extends Component {
         this.props.fetchConvos()
     }
 
+    
     handleRelationship = (event, status) => {
         this.props.updateRelationship(
           status
