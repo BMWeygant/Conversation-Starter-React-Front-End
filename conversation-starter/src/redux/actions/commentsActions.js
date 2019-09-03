@@ -23,7 +23,7 @@ export const setContent = content => {
 export const addComment = comment => {
     return {
       type: "SUBMIT_COMMENT_SUCCESS",
-      comment
+      payload: comment
     }
   }
 
@@ -34,7 +34,7 @@ export const resetCommentForm = () => {
     }
 }
 
-export const createComment = (comment) => {
+export const createComment = comment => {
     return (dispatch) => {
   
        fetch('http://localhost:3001/comments/', {
@@ -44,7 +44,8 @@ export const createComment = (comment) => {
         },
         body: JSON.stringify({
                  name: comment.name,
-              content: comment.content
+              content: comment.content,
+              quote_id: comment.quote_id
             }
           )
         })
@@ -53,7 +54,6 @@ export const createComment = (comment) => {
         .then(comment => {
             console.log(comment)
             dispatch(addComment(comment))
-            dispatch(resetCommentForm())
           })
           .catch(error => console.log(error))
       }

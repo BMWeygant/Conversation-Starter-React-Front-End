@@ -18,7 +18,7 @@ export default class Quote extends Component {
         render(){
            return (
                <div>
-                <li>{this.props.quote.line} <Like /></li>
+                <li><a href={'/quotes/' + this.props.quote.id}>{this.props.quote.line}</a> <Like /></li>
              </div>
             )
          }

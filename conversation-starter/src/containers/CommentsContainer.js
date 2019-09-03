@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchComments, setName, setContent, addComment, resetCommentForm, createComment } from '../redux/actions/commentsActions'
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+import Comments from './Comments';
 
 class CommentsContainer extends Component {
   
@@ -15,8 +16,11 @@ handleOnSubmit = e => {
       let commentData = {
           name: this.props.comments.name,
           content: this.props.comments.content,
+          quote_id: parseInt(document.location.href.match(/\d+/g)[1])
       }
-      this.props.createComment(commentData)          
+      this.props.createComment(commentData)
+      let resetForm = document.getElementById("comment-form")
+      resetForm.reset()          
 }
 
 handleNameChange = e => {
@@ -32,26 +36,30 @@ render(){
             <div className='comments-header'>
               <h1>Have something to say?</h1>
             </div>
-            <form onSubmit={(e) => this.handleOnSubmit(e)}>
+            <form id="comment-form" onSubmit={(e) => this.handleOnSubmit(e)}>
               <div>
                 <label>
                    Name:
-                  <input type="text" name= "name" onSubmit={(e) => this.handleNameChange(e)} value={this.props.comments.name} />
+                  <input type="text" name= "name" value={this.props.comments.name} onChange={(e) => this.handleNameChange(e)} />
                 </label>
                 <br />
                 <label>
                   Comment:
-                  <textarea type="text" name= "content" onSubmit={(e) => this.handleContentChange(e)} value={this.props.comments.content} cols={24} rows={5} />
+                  <textarea type="text" name= "content" value={this.props.comments.content} onChange={(e) => this.handleContentChange(e)} cols={24} rows={5} />
                 </label>
               </div>
                 <button>Submit</button>
             </form>
                
-          <div>                 
-    <ul>
-      {console.log(this.props)}
-      Hi
-    </ul>
+          <div className = 'quote-comments'>                 
+          <ul className = 'quote-comments-list'>
+            {/* {console.log(this.props.comments.comments)} */}
+            {/* {console.log(this)} */}
+            {this.props.comments.comments.map(comment => {
+              if(comment.quote_id === parseInt(document.location.pathname.match(/\d+/g)))
+              return<Comments comment={comment} />
+            })}
+       </ul>
   </div>
   </div>
   }
