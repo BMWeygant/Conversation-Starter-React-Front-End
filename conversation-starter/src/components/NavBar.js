@@ -9,7 +9,6 @@ const NavBar = () => {
                 <Link to = '/convos' className = 'navLink' activeclassname="activeLink">Conversation       </Link>
                 <Link to = '/about' className = 'navLink' activeclassname="activeLink">About Me </Link>
                 <Link to = '/quotes' className = 'navLink' activeclassname="activeLink">Quotes </Link>
-                {/* <Link to = '/targets' className = 'navLink' activeclassname="activeLink">Targets </Link> */}
             </div>
         </div>
     )
