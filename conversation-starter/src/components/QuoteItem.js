@@ -16,7 +16,7 @@ import  CommentsContainer  from '../containers/CommentsContainer'
            this.props.quote.map(quote => (
             <div key={quote.id}>
                 <h2>{quote.line}</h2>
-                <CommentsContainer />
+                <CommentsContainer {...this.props} />
             </div>
           ))
        )
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
         quote: quote
       }
    }
-export default connect(mapStateToProps, {fetchQuotes, CommentsContainer})(QuoteItem);
+export default connect(mapStateToProps, {fetchQuotes: fetchQuotes, CommentsContainer: CommentsContainer})(QuoteItem);
