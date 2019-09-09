@@ -55,8 +55,7 @@ render(){
           <ul className = 'quote-comments-list'>
             {/* {console.log(this.props.comments.comments)} */}
             {/* {console.log(this)} */}
-            {this.props.comments.comments.map(comment => {
-              if(comment.quote_id === parseInt(document.location.pathname.match(/\d+/g)))
+            {this.props.comments.map(comment => {
               return<Comments comment={comment} />
             })}
        </ul>
@@ -67,9 +66,15 @@ render(){
 
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
+  console.log(props.match.params.id)
+  const quoteId = +props.match.params.id
+  const quoteComments = state.comments.comments.filter(function(comment) {
+   return comment.quote_id  === quoteId
+  })
+  console.log(quoteComments) // quoteComments is all of the comments associated with this quote
   return {
-    comments: state.comments
+    comments: quoteComments //right now this line is giving the CommentsContainer ALL of the comments
   }
 }
 
