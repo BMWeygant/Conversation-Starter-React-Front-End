@@ -8,7 +8,6 @@ const NavBar = () => {
                 <Link to = '/' className = 'navLink' activeclassname="activeLink">Home      </Link>
                 <Link to = '/convos' className = 'navLink' activeclassname="activeLink">Conversation       </Link>
                 <Link to = '/about' className = 'navLink' activeclassname="activeLink">About Me </Link>
-                {/* <Link to = '/targets' className = 'navLink' activeclassname="activeLink">Targets </Link> */}
             </div>
         </div>
     )
