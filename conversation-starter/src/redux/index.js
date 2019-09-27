@@ -11,8 +11,6 @@ const rootReducer = combineReducers({
     comments
 })
 
-//const middleware = (thunk)
-
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)
     )
  )
