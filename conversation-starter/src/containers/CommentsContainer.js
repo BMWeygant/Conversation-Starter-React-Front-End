@@ -53,8 +53,6 @@ render(){
                
           <div className = 'quote-comments'>                 
           <ul className = 'quote-comments-list'>
-            {/* {console.log(this.props.comments.comments)} */}
-            {/* {console.log(this)} */}
             {this.props.comments.map(comment => {
               return<Comments comment={comment} />
             })}
@@ -67,26 +65,13 @@ render(){
 
 
 const mapStateToProps = (state, props) => {
-  console.log(props.match.params.id)
   const quoteId = +props.match.params.id
   const quoteComments = state.comments.comments.filter(function(comment) {
    return comment.quote_id  === quoteId
   })
-  console.log(quoteComments) // quoteComments is all of the comments associated with this quote
   return {
-    comments: quoteComments //right now this line is giving the CommentsContainer ALL of the comments
+    comments: quoteComments
   }
 }
 
  export default connect(mapStateToProps, { withRouter, fetchComments, setName, setContent, addComment, resetCommentForm, createComment })(CommentsContainer)
-
-
-//  <form onSubmit={(e) => this.handleSubmit(e)}>
-//    <label>
-//      Name:
-//     <input type="text" name="name" onChange={(e) => this.handleName(e, {this.name})}/>
-//    </label><br />
-//    Comment:
-//    <input type="textarea" name="content" onChange={(e) => this.handleContent(e, {this.name})}/>
-//    <input type="submit" value="Submit" />
-//  </form> 
