@@ -29,7 +29,14 @@ class ConvosContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.createConvo(this.props.convo)
+        let convoData = {
+            relationship: this.props.convo.relationship,
+            location: this.props.convo.location,
+            approachability: this.props.convo.approachability
+        }
+        this.props.createConvo(convoData)
+        let resetForm = document.getElementById("convo-form")
+      resetForm.reset()  
       }
 
     render(){
@@ -38,7 +45,7 @@ class ConvosContainer extends Component {
                <div className = 'convo-header'>
                <h1>Please Fill Out The Form</h1>
                </div>
-               <form onSubmit={(e) => this.handleSubmit(e)}>
+               <form id='convo-form' onSubmit={(e) => this.handleSubmit(e)}>
                <label>
                    <h4 className = 'convo-question'>What's your relationship with this person?</h4>
                     <input
@@ -66,9 +73,8 @@ class ConvosContainer extends Component {
                 </label>
                 <br />
                 <br />
-                <br /> 
                 <label>
-                    <h4 className = 'convo-question'>Where is the conversation taking place?</h4>
+                    <h4 className = 'convo-question'>What kind of environment is the conversation taking place in?</h4>
                     <input 
                         type="radio" 
                         name="location"
@@ -121,8 +127,8 @@ class ConvosContainer extends Component {
                 </label>
                 <br></br>
                 <br></br>
-                <button>Submit</button>
-                <QuotesContainer />
+                <button>Reset Form</button>
+                <QuotesContainer {...this.props}/>
                </form>
             </div>
         )
