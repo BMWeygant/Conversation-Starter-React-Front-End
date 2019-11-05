@@ -34,6 +34,13 @@ export const updateLocation = convo => {
     }
   }
 
+  export const newConvo = convo => {
+    return {
+      type: 'START_NEW_CONVO',
+      payload: convo
+    }
+  }
+
 export const createConvo = (convo) => {
 
     return (dispatch) => {

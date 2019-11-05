@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability } from '../redux/actions/convosActions'
+import { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, newConvo } from '../redux/actions/convosActions'
 import  QuotesContainer  from '../containers/QuotesContainer'
 
 class ConvosContainer extends Component {
@@ -36,7 +36,13 @@ class ConvosContainer extends Component {
         }
         this.props.createConvo(convoData)
         let resetForm = document.getElementById("convo-form")
-      resetForm.reset()  
+      resetForm.reset()
+      }
+
+      handleReset = ({fields, form}) => {
+          this.props.newConvo(
+        
+          );
       }
 
     render(){
@@ -45,7 +51,7 @@ class ConvosContainer extends Component {
                <div className = 'convo-header'>
                <h1>Please Fill Out The Form</h1>
                </div>
-               <form id='convo-form' onSubmit={(e) => this.handleSubmit(e)}>
+               <form id='convo-form' onSubmit={(e) => this.handleSubmit(e)} onReset={this.handleReset}>
                <label>
                    <h4 className = 'convo-question'>What's your relationship with this person?</h4>
                     <input
@@ -141,4 +147,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, QuotesContainer })(ConvosContainer)
+export default connect (mapStateToProps, { fetchConvos, createConvo, updateRelationship, updateLocation, updateApproachability, QuotesContainer, newConvo })(ConvosContainer)
