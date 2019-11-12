@@ -24,42 +24,45 @@
 }
 
 .nav-wrapper {
-  background: orange;
   text-align: center;
   font-size: 27px;
   text-shadow: 2px 2px black;
   width: 100%;
   height: 100%;
-	min-height: 55px;
-	padding-left: 25px;
-	
+	/* min-height: 55px; */
 	margin: 0;
 }
 
 .nav-links-wrapper {
+  background: peru;
   margin: 0;
+}
+
+.logo-navLink{
+  width: 150px;
 }
 
 
 .footer-wrapper{
-  background: orange;
   margin: none;
   border-top: none;
   
 }
 
 .convo-container{
-  background: rgb(83, 211, 111);
+  background: #ffffff;
   margin: 0;
-  background-size: auto;
+  background-size: cover;
 }
 
 .quotes-container{
-  background: #ffffff;
+  background: #000000;
   font-family: 'Rock Salt', cursive;
+  font-size: 20px;
   font-weight: bold;
   width: 100%;
   height: 100px;
+  color: rgb(216, 100, 212)
 
 }
 
@@ -75,6 +78,10 @@ h1{
 
 ul{
   margin: 0;
+}
+
+a{
+  color: rgb(216, 100, 212)
 }
 
 @keyframes App-logo-spin {
