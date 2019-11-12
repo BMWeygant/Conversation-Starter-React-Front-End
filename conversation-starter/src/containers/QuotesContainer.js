@@ -31,16 +31,14 @@ class QuotesContainer extends Component {
       index = 3
     }
       return(
-        <li>{this.props.store.quotes.quote[index].line}</li>
+        this.props.store.quotes.quote[index].line
       )
     }
     
     render(){
       return(
-          <div className = 'quotes-container'>
-          <ul className = 'quotes-list'>
+          <div className = 'quotes-container'>         
             {this.displayQuote()}
-       </ul>
           </div>
       )
     }

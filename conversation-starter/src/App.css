@@ -24,37 +24,57 @@
 }
 
 .nav-wrapper {
-  background: rgb(43, 109, 231);
+  background: orange;
   text-align: center;
   font-size: 27px;
   text-shadow: 2px 2px black;
-	width: 100%;
+  width: 100%;
+  height: 100%;
 	min-height: 55px;
 	padding-left: 25px;
-	border-bottom: 1px solid rgba(15,15,15,0.5);
-	margin: auto;
+	
+	margin: 0;
 }
 
 .nav-links-wrapper {
-  margin: auto
+  margin: 0;
 }
 
+
 .footer-wrapper{
-  background: orange
+  background: orange;
+  margin: none;
+  border-top: none;
+  
 }
 
 .convo-container{
-  background: rgb(83, 211, 111)
+  background: rgb(83, 211, 111);
+  margin: 0;
+  background-size: auto;
 }
 
 .quotes-container{
-  background: #c207c2;
+  background: #ffffff;
+  font-family: 'Rock Salt', cursive;
   font-weight: bold;
+  width: 100%;
+  height: 100px;
+
 }
 
 .convo-question{
   text-align: center;
   font-family: 'Rock Salt', cursive;
+  margin: 0;
+}
+
+h1{
+  margin: 0;
+}
+
+ul{
+  margin: 0;
 }
 
 @keyframes App-logo-spin {
